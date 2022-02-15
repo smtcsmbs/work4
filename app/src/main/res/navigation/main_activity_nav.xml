@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_nav"
+    app:startDestination="@id/mainFragment">
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.workfour.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_birinciFragment"
+            app:destination="@id/birinciFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_altBirinciFragment"
+            app:destination="@id/altBirinciFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/birinciFragment"
+        android:name="com.example.workfour.BirinciFragment"
+        android:label="fragment_birinci"
+        tools:layout="@layout/fragment_birinci" >
+        <action
+            android:id="@+id/action_birinciFragment_to_ikinciFragment"
+            app:destination="@id/ikinciFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/ikinciFragment"
+        android:name="com.example.workfour.IkinciFragment"
+        android:label="fragment_ikinci"
+        tools:layout="@layout/fragment_ikinci" >
+        <action
+            android:id="@+id/action_ikinciFragment_to_altIkinciFragment"
+            app:destination="@id/altIkinciFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/altBirinciFragment"
+        android:name="com.example.workfour.AltBirinciFragment"
+        android:label="fragment_alt_birinci"
+        tools:layout="@layout/fragment_alt_birinci" >
+        <action
+            android:id="@+id/action_altBirinciFragment_to_altIkinciFragment"
+            app:destination="@id/altIkinciFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/altIkinciFragment"
+        android:name="com.example.workfour.AltIkinciFragment"
+        android:label="fragment_alt_ikinci"
+        tools:layout="@layout/fragment_alt_ikinci" >
+        <action
+            android:id="@+id/action_altIkinciFragment_pop_including_birinciFragment"
+            app:launchSingleTop="false"
+            app:popUpTo="@id/birinciFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
